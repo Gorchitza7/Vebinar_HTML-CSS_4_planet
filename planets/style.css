@@ -1,0 +1,107 @@
+body {
+	background-color: black;
+	/* внешняя граница */
+	margin: 0;
+	/* внутренняя граница */
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.solar-system {
+	position: relative;
+	width: 800px;
+	height: 800px;
+}
+
+.sun {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	color: darkgrey;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.orbit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 1px solid gray;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	z-index: 0;
+}
+
+.planet {
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	width: 30px;
+	height: 30px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	color: white;
+}
+
+#mercury {
+	background-color: #ccc;
+}
+#venus {
+	background-color: #f93;
+}
+#earth {
+	background-color: #39f;
+}
+#mars {
+	background-color: #c35;
+}
+
+#orbit-mercury {
+	width: 150px;
+	height: 150px;
+	z-index: 5;
+}
+#orbit-venus {
+	width: 250px;
+	height: 250px;
+	z-index: 4;
+}
+#orbit-earth {
+	width: 350px;
+	height: 350px;
+	z-index: 3;
+}
+#orbit-mars {
+	width: 500px;
+	height: 500px;
+	z-index: 2;
+}
+
+.planet::after {
+	content: '';
+	position: absolute;
+	opacity: 0;
+}
+
+.planet:hover::after {
+	opacity: 1;
+}
+
+#mercury::after {
+	content: 'Mercury';
+}
+#venus::after {
+	content: 'Venus';
+}
+#earth::after {
+	content: 'Earth';
+}
+#mars::after {
+	content: 'Mars';
+}
